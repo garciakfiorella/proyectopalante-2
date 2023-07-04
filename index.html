@@ -11,55 +11,103 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header class="texto_gral">
-        <img id="logo" src="sources/img/GF.jpg" alt>
-        <span>Fiorella García</span>
-        <!-- Navbar -->
-        <nav>
-            <a href="#img">Inicio</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
+    <header class="top-nav texto_gral" id="burger-menu">
+        <div>
+            <img id="logo" src="sources/img/GF.jpg" alt>
+        </div>
+        <span class="titulo_sec">Fiorella García</span>
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle" id="burgermenu">
+            <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+            <li id="menu_inicio"><a href="#img">Inicio</a></li>
+            <li id="menu_contacto"><a href="#contacto">Contacto</a></li>
+        </ul>
     </header>
-
+    <input type="checkbox" id="darkmode-toggle"/>
+    <label for="darkmode-toggle" id="darkmodeslider">
+        <svg version="1.1" class="sun" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+            <rect x="152.994" y="58.921" transform="matrix(0.3827 0.9239 -0.9239 0.3827 168.6176 -118.5145)" width="40.001" height="16"/>
+            <rect x="46.9" y="164.979" transform="matrix(0.9239 0.3827 -0.3827 0.9239 71.29 -12.4346)" width="40.001" height="16"/>
+            <rect x="46.947" y="315.048" transform="matrix(0.9239 -0.3827 0.3827 0.9239 -118.531 50.2116)" width="40.001" height="16"/>                  
+            <rect x="164.966" y="409.112" transform="matrix(-0.9238 -0.3828 0.3828 -0.9238 168.4872 891.7491)" width="16" height="39.999"/>                
+            <rect x="303.031" y="421.036" transform="matrix(-0.3827 -0.9239 0.9239 -0.3827 50.2758 891.6655)" width="40.001" height="16"/>                
+            <rect x="409.088" y="315.018" transform="matrix(-0.9239 -0.3827 0.3827 -0.9239 701.898 785.6559)" width="40.001" height="16"/>                
+            <rect x="409.054" y="165.011" transform="matrix(-0.9239 0.3827 -0.3827 -0.9239 891.6585 168.6574)" width="40.001" height="16"/>
+            <rect x="315.001" y="46.895" transform="matrix(0.9238 0.3828 -0.3828 0.9238 50.212 -118.5529)" width="16" height="39.999"/>
+            <path d="M248,88c-88.224,0-160,71.776-160,160s71.776,160,160,160s160-71.776,160-160S336.224,88,248,88z M248,392 c-79.4,0-144-64.6-144-144s64.6-144,144-144s144,64.6,144,144S327.4,392,248,392z"/>
+            <rect x="240" width="16" height="72"/>
+            <rect x="62.097" y="90.096" transform="matrix(0.7071 0.7071 -0.7071 0.7071 98.0963 -40.6334)" width="71.999" height="16"/>
+            <rect y="240" width="72" height="16"/>
+            <rect x="90.091" y="361.915" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 -113.9157 748.643)" width="16" height="71.999"/>
+            <rect x="240" y="424" width="16" height="72"/>                    
+            <rect x="361.881" y="389.915" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 397.8562 960.6281)" width="71.999" height="16"/>
+            <rect x="424" y="240" width="72" height="16"/>
+            <rect x="389.911" y="62.091" transform="matrix(0.7071 0.7071 -0.7071 0.7071 185.9067 -252.6357)" width="16" height="71.999"/>
+        </svg>
+        <svg version="1.1" class="moon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 49.739 49.739" style="enable-background:new 0 0 49.739 49.739;" xml:space="preserve">
+            <path d="M25.068,48.889c-9.173,0-18.017-5.06-22.396-13.804C-3.373,23.008,1.164,8.467,13.003,1.979l2.061-1.129l-0.615,2.268 c-1.479,5.459-0.899,11.25,1.633,16.306c2.75,5.493,7.476,9.587,13.305,11.526c5.831,1.939,12.065,1.492,17.559-1.258v0 c0.25-0.125,0.492-0.258,0.734-0.391l2.061-1.13l-0.585,2.252c-1.863,6.873-6.577,12.639-12.933,15.822 C32.639,48.039,28.825,48.888,25.068,48.889z M12.002,4.936c-9.413,6.428-12.756,18.837-7.54,29.253 c5.678,11.34,19.522,15.945,30.864,10.268c5.154-2.582,9.136-7.012,11.181-12.357c-5.632,2.427-11.882,2.702-17.752,0.748 c-6.337-2.108-11.473-6.557-14.463-12.528C11.899,15.541,11.11,10.16,12.002,4.936z"/>
+        </svg>
+    </label>
     <!-- La estructura básica y la vinculación con CSS estan listas. A codear! 💪  -->
     <!-- En este archivo escriban su HTML -->
-    <main>
-        <section id="img">
-            <div>
-                <img id="foto" src="sources/img/FiorellaG.jpg" alt="">    
-            </div>    
+    <main class="color-scheme-wrapper">
+
+        <div id="caja1" class="outer_box">
+            <div id="caja2" class="img_box">
+                <section id="img">
+                    <div>
+                        <img id="foto" src="sources/img/FiorellaG.jpg" alt="">    
+                    </div>    
+                </section>
+            </div>
+
+            <section id="resumen">
+                <h2 class="titulo_main">¡Hola, Bienvenido! Soy Fiore</h2>
+                <p class="texto_gral parrafo"> 
+                    Actualmente estoy como Tester QA, con experiencia en pruebas manuales a software en ambientes web, desktop y mobile.
+                    Me considero una persona autodidacta, inquieta, curiosa, empática, resilente.
+                </p>
+                <p class="texto_gral"> 
+                    Capacidad analítica y de resolución de problemas, atención al detalle, buena disposición para trabajos individuales y en equipo. Algunas de las herramientas que manejo son las siguientes.
+                </p>
+                <p class="texto_gral parrafo" >
+                    <b>Mis principales tareas son:</b>
+                    <ul class="texto_gral">
+                        <li>Realizar análisis, diseño y ejecución de escenarios y casos de pruebas. </li>
+                        <li>Buscar soluciones efectiva de incidentes. </li>
+                        <li>Hacer revisión y análisis de documentación funcional. </li>
+                        <li>Elaborar test plans y test cases detallados y explicativos. </li>
+                        <li>Detección de errores, levantamiento y seguimiento de bugs; utilizando como herramientas, Trello, Excel, SQL, Figma. </li>
+                    </ul>
+                </p>
+
+            </section>
+
+        </div>
+        
+        <section id="skills">
+            <b class="titulo_sec parrafo">Mis Skills / Habilidades</b>
+            <span style="font-size: 90px;">
+                <svg id="ccs3" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 32l34.9 395.8L192 480l157.1-52.2L384 32H0zm313.1 80l-4.8 47.3L193 208.6l-.3.1h111.5l-12.8 146.6-98.2 28.7-98.8-29.2-6.4-73.9h48.9l3.2 38.3 52.6 13.3 54.7-15.4 3.7-61.6-166.3-.5v-.1l-.2.1-3.6-46.3L193.1 162l6.5-2.7H76.7L70.9 112h242.2z"/></svg>
+                <svg id="html5" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 32l34.9 395.8L191.5 480l157.6-52.2L384 32H0zm308.2 127.9H124.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L138 320l53.5 14.5 53.7-14.5 6-62.2H84.3L71.5 112.2h241.1l-4.4 47.7z"/></svg>
+                <svg id="js" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 32v448h448V32H0zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V237.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L368 290c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"/></svg>
+                <svg id="trello" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M392.3 32H56.1C25.1 32 0 57.1 0 88c-.1 0 0-4 0 336 0 30.9 25.1 56 56 56h336.2c30.8-.2 55.7-25.2 55.7-56V88c.1-30.8-24.8-55.8-55.6-56zM197 371.3c-.2 14.7-12.1 26.6-26.9 26.6H87.4c-14.8.1-26.9-11.8-27-26.6V117.1c0-14.8 12-26.9 26.9-26.9h82.9c14.8 0 26.9 12 26.9 26.9v254.2zm193.1-112c0 14.8-12 26.9-26.9 26.9h-81c-14.8 0-26.9-12-26.9-26.9V117.2c0-14.8 12-26.9 26.8-26.9h81.1c14.8 0 26.9 12 26.9 26.9v142.1z"/></svg>
+                <svg id="github" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+                <svg id="sql" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z"/></svg>
+            </span>
         </section>
-
-        <section id="resumen" >
-            <h2 class="titulo_main">¡Hola! Soy Fiore</h2>
-            <p class="texto_gral parrafo"> 
-                Soy una Analista de Testing Manual (QA), con experiencia en pruebas manuales a software en ambientes web, desktop y mobile.
-            </p>
-
-            <p class="texto_gral parrafo" >
-                Mis principales tareas son:
-                <ul>
-                    <li>Realizar análisis, diseño y ejecución de escenarios y casos de pruebas. </li>
-                    <li>Buscar soluciones efectiva de incidentes. </li>
-                    <li>Hacer revisión y análisis de documentación funcional. </li>
-                    <li>Elaborar test plans y test cases detallados y explicativos. </li>
-                </ul>
-            </p>
-            <p class="texto_gral parrafo"> 
-                Siempre en constante capacitación y con interés en nuevas tecnologías.
-                Profesional analítico, responsable, con capacidad de resolución de problemas. Buena disposición para trabajos individuales y en equipo.
-            </p>
-        </section>
-
+    
         <section id="button">
-            <a href="sources/CvResumen.pdf" download="CVFiorellaGarcia.pdf">Resumen Curricular</a>
+            <a href="sources/CvResumen.pdf" download="CVFiorellaGarcia.pdf">Descarga mi CV</a>
         </section>
 
         <section id="hablemos">
             <div class="section-experiences__card-content">
                 <h2 class="section-experiences__title titulo_sec">Hablemos</h2>  
                 <p class="section-experiences__description texto_gral parrafo">
-                    Actualmente me encuentro capacitandome como desarrollador Web de la mano con Código Palante. Tienen una muy buena dinámica que hace que mi aprendizaje sea más llevadero. Hay que motivarse a practicar e indagar más, ya queesta rama es muy amplia y siempre sus herramientas y/o teconologías estan en constante actualización.<br>                    
+                    Ahora me encuentro capacitandome como desarrollador Web de la mano con Código Palante. Tienen una muy buena dinámica que hace que mi aprendizaje sea más llevadero. Siempre hay que motivarse a practicar e indagar más, ya que ésta rama es muy amplia y sus herramientas y/o teconologías siempre están en constante actualización.<br>                    
                     ¡Seguimos Palante!
                 </p> 
             </div>
@@ -70,13 +118,10 @@
             <a href="https://www.linkedin.com/in/garciakfiorella/"><img class="icono" src="sources/img/linkedin.png" alt></a>
             <a href="mailto:garciakfiorella@gmail.com"><img class="icono" src="sources/img/mail.png" alt></a>                 
         </section>
-
-
-
-
     </main>
     <footer>                
-        <p>Código Palante - Latam</p>
+        <p>Código Palante / Eidos Global / Accenture. Latam.</p>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

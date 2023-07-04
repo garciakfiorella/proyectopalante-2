@@ -40,9 +40,20 @@ a {
 *  el margin: auto; para tenerlo centrado fácilmente ;)
 */
 main {
-    max-width: 1200px;
+    width: 100%;
+    /* max-width: 1200px; */
     margin: auto;
     padding: 1rem;
+}
+
+.outer_box{
+    display: inline-block;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.img_box{
+    float: left;
 }
 
 /* Recomendaciones! 
@@ -63,36 +74,9 @@ main {
 *    un trabajo manual, hacer una artesanía, tocar un instrumento musical... la práctica es todo!
 */
 
-
-
-
-body{
-    background-color: white;
-    scroll-behavior: smooth;
-    overflow-y: scroll;
-    margin: 0;
-    text-align: center;
-    display: block;
-}
-
-header {
-    background: #f7adad;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    z-index: 1;
-    text-align: center;
-    padding: 20px 20px;
-}
-
 p{
-    margin: 10px 0px;
+    margin: 5px 0px;
 }
-
 
 /* Establecer un diseño flexible para las secciones */
 section {
@@ -111,14 +95,14 @@ section {
     position: relative;
     display: flex;
     border-radius: 5px;
-    }
+}
 
 /* Utilizar flexbox para ajustar el tamaño de la imagen de perfil */
 div {
     display: flex;
     justify-content: center;
     align-items: center;
-    }    
+}    
 
 footer {
     align-self: flex-end;
@@ -127,15 +111,14 @@ footer {
     padding: 20px 20px;
     color: #fff;
     text-align: center;
-    height: 90px;
+    height: 75px;
 }
 
-
 #foto {
-    margin-top: 100px;
+    margin-top: 0px;
     border-radius: 24px;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     height: auto;
     }
 
@@ -165,13 +148,14 @@ footer {
     width: 50px;    
     }
 
-
 .contacto {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
+
+svg {fill: #b49a9a;;}
 
 .texto_gral{
     font-size: 18px;
@@ -188,7 +172,261 @@ footer {
     font-weight: 400;
 }
 
-
 .parrafo{
     margin: 28px;
+}
+
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left, #d7c7c3, #f7adad);
+    color: #FFF;
+    height: 60px;
+    padding: 1em;
+    width: 100%;
+}
+
+.menu {
+display: flex;
+flex-direction: row;
+list-style-type: none;
+margin: 0;
+padding: 0;
+justify-content: center;
+}
+
+.menu > li {
+margin: 0 1rem;
+overflow: hidden;
+}
+
+.menu-button-container {
+display: none;
+height: 100%;
+width: 30px;
+cursor: pointer;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+#menu-toggle {
+display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+display: block;
+background-color: #fff;
+position: absolute;
+height: 4px;
+width: 30px;
+transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+border-radius: 2px;
+}
+
+.menu-button::before {
+content: '';
+margin-top: -8px;
+}
+
+.menu-button::after {
+content: '';
+margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+margin-top: 0px;
+transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+margin-top: 0px;
+transform: rotate(-405deg);
+}
+
+  /* Media Query para menu hamburguesa. Comportamiento hasta 700px  */
+@media (max-width: 800px) {
+
+.outer_box{
+    display: block ;    
+    align-items: center;
+}    
+
+.img_box{
+    float: none;
+}
+    
+label {
+    display:flex;
+}
+.menu-button-container {
+    display: flex;
+}
+.menu {
+    position: absolute;
+    top: 10px;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+#menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#menu-toggle:checked ~ .menu li {
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(135, 122, 122);
+}
+.menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+}
+}
+
+/* Dark Mode */
+body {
+    display: flex;
+    margin: 0;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    text-align: center;
+
+}
+#darkmodeslider {
+	width:50px;
+	height:20px;
+	position: absolute;
+	display: inline-block;
+	background: #ebebeb;
+	border-radius: 20px;
+	box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+	cursor: pointer;
+	transition: 0.3s;
+    top: 70px;
+    right: 20px
+}
+#darkmodeslider:after {
+	content: "";
+	width:18px;
+	height: 18px;
+	position: absolute;
+	top:1px;
+	left:1px;
+	background: linear-gradient(180deg,#ffcc89,#d8860b);
+	border-radius: 18px;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+	transition: 0.5s;
+}
+#darkmode-toggle {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+#darkmode-toggle:checked + #darkmodeslider {
+	background:#242424;
+    color: #FFF
+}
+#darkmode-toggle:checked + #darkmodeslider:after {
+	left:49px;
+	transform: translateX(-100%);
+	background: linear-gradient(180deg,#777,#3a3a3a);
+}
+#darkmodeslider:active:after{
+	width: 26px;
+}
+.color-scheme-wrapper {
+	/* width:100vw;
+	height: 100vh; */
+	background: #fff;
+    color:  #242424;
+	/* z-index: -1;
+	position: absolute;
+	transition: 0.3s; */
+    transition: 0.5s;
+}
+.background {
+	width:100%;
+	height: 100%;
+	background: #fff;
+	z-index: 0;
+	position: absolute;
+	transition: 0.3s;
+}
+#darkmode-toggle:checked + #darkmodeslider + .color-scheme-wrapper {
+	background:#242424;
+    color: #FFF
+}
+#darkmode-toggle:checked + #darkmodeslider + .background {
+	background:#242424;
+    color: #FFF
+}
+#darkmode-toggle:checked + .color-scheme-wrapper {
+	background:#242424;
+    color: #FFF
+}
+#darkmodeslider svg {
+	position: absolute;
+	width: 12px;
+	top:4px;
+	z-index: 5;
+}
+#darkmodeslider svg.sun {
+	left:4px;
+	fill:#fff;
+	transition: 0.3s;
+}
+#darkmodeslider svg.moon {
+	left:34px;
+	fill:#7e7e7e;
+	transition: 0.3s;
+}
+#darkmode-toggle:checked + #darkmodeslider svg.sun {
+	fill:#7e7e7e;
+}
+#darkmode-toggle:checked + #darkmodeslider svg.moon {
+	fill:#fff;
+}
+
+/* end Dark Mode */
+
+/* DESKTOP */
+  /* Media Query para ubicacion de foto. Comportamiento desde 1024px  */
+@media (min-width: 1024px){
+
+    #foto {
+        margin-top: 0px;
+        border-radius: 24px;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
 }
